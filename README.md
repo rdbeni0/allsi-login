@@ -15,7 +15,7 @@ W skrócie: proste i działające logowanie przy użyciu perl5/python3
 * podstawowe narzędzia unixowe (grep, curl, tzw. coreutils; cat, awk, mkdir)
 * python3: requests, json, sys i argv, http.server, webbrowser
 * PERL5: póki co to tylko "Perl Core**
-* moduł pythona3 **webbrowser** wymaga działającej przeglądarki internetowej, np. Google Chrome (aby przejść przez cały proces autoryzacji)
+* moduł pythona3 _webbrowser_ wymaga działającej przeglądarki internetowej, np. Google Chrome (aby przejść przez cały proces autoryzacji)
 * (opcjonalnie) dla skryptu do WebAPI : PHP z obsługą SOAP
 
 Jeżeli repo będzie się rozrastać, a proces komplikować, to zależności również.
