@@ -1,4 +1,4 @@
-### allsi-login
+# allsi-login
 
 allego simple login (PL)
 
@@ -10,7 +10,7 @@ Jeżeli więc pojawi się jakaś zmiana dotycząca procesu logowania, to w tym r
 
 W skrócie: proste i działające logowanie przy użyciu perl5/python3
 
-#### ZALEŻNOŚCI, WYMAGANIA
+## ZALEŻNOŚCI, WYMAGANIA
 
 * podstawowe narzędzia unixowe (grep, curl, tzw. coreutils; cat, awk, mkdir)
 * python3: requests, json, sys i argv, http.server, webbrowser
@@ -20,7 +20,7 @@ W skrócie: proste i działające logowanie przy użyciu perl5/python3
 
 Jeżeli repo będzie się rozrastać, a proces komplikować, to zależności również.
 
-#### OFICJALNA DOKUMENTACJA, KLUCZE I KODY
+## OFICJALNA DOKUMENTACJA, KLUCZE I KODY
 
 Całość jest ściśle zgodna z oficjalną dokumentacją:
 * https://developer.allegro.pl/auth/  
@@ -31,7 +31,7 @@ Kody dla aplikacji wygenerujemy i sprawdzimy tutaj:
 
 ![Rejestrowanie aplikacji](./dokumentacja_screeny/screen001.jpg)
 
-#### PLIK KONFIGURACYJNY I CACHE
+## PLIK KONFIGURACYJNY I CACHE
 
 Plik ten znajduje się domyślnie w folderze z aplikacją jako: `./.alsi_conf_file` . Zawiera dwa podstawowe prefixy: `sandbox_` oraz `produkcja_` . Kody, które trzeba wpisać do pliku to:
 
@@ -41,7 +41,7 @@ Plik ten znajduje się domyślnie w folderze z aplikacją jako: `./.alsi_conf_fi
 
 W trakcie pierwszego uruchomienia `allsi-login.pl` pojawi się folder **`cache`** w którym będą znajdowały się dane dotyczące logowania.
 
-#### allsi-login.pl
+## allsi-login.pl
 
 Główny skrypt perlowy do zarządzania loginem na allegro.  
   
@@ -55,11 +55,11 @@ Dwa wymagane parametry:
 - sandbox : środowisko testowe, pobranie danych do środowiska testowa z pliku konfiguracyjnego  
 - produkcja : zalogowanie się na główne allegro...  
 
-#### WYNIK PROGRAMU
+## WYNIK PROGRAMU
 
 Główny output programu to **`./cache/allsi_access-token-12godz.json`** : jest to plik ze zdalnie uzyskanym kodem dostępu, który jest ważny przez 12 godzin i może zostać użyty do dalszych requestów.
 
-#### PRZYKŁADY DZIAŁANIA
+## PRZYKŁADY DZIAŁANIA
 
 Przed jakimkolwiek działaniem, należy uzupełnić plik konfiguracyjny. Będzie on podawany w pierwszym parametrze. Wywołanie jest zawsze z dwoma parametrami (oddzielone 1 spacją):
 
@@ -69,7 +69,7 @@ Przed jakimkolwiek działaniem, należy uzupełnić plik konfiguracyjny. Będzie
 
     ./allsi-login.pl $HOME/Documents/.allsi-plik-konf.txt sandbox
 
-####  WebAPI (opcjonalnie)
+##  WebAPI (opcjonalnie)
 
 W repozytorium znajduje się również dodatkowy skrypt PHP : `WebAPI-produkcja-login.php`   
 Aby skrypt zadziałał, musi być włączona obsługa SOAP w PHP. Można to sprawdzić np. przez:
