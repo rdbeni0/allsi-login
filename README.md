@@ -29,7 +29,7 @@ Kody dla aplikacji wygenerujemy i sprawdzimy tutaj:
 * SANDBOX (testy): https://apps.developer.allegro.pl.allegrosandbox.pl/
 * PRODUKCJA: https://apps.developer.allegro.pl/
 
-![Rejestrowanie aplikacji](./dokumentacja_screeny/screen001.jpg)
+![Rejestrowanie aplikacji](https://raw.githubusercontent.com/collector1871/allsi-login/master/dokumentacja_screeny/screen001.jpg)
 
 ## PLIK KONFIGURACYJNY I CACHE
 
