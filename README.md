@@ -44,7 +44,7 @@ Plik ten znajduje się domyślnie w folderze z aplikacją jako: `./.alsi_conf_fi
 * **client_secret** to _Client Secret_
 * **redirect_uri** to _Adresy Przekierowań_
 
-W trakcie pierwszego uruchomienia `allsi-login.pl` pojawi się folder **`cache`** w którym będą znajdowały się dane dotyczące logowania.
+W trakcie pierwszego uruchomienia `allsi-login.pl` pojawi się folder **`cache`** w którym będą znajdowały się pobrane dane dotyczące logowania.
 
 ## allsi-login.pl
 
