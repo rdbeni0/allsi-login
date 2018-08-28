@@ -1,0 +1,23 @@
+#w tym pliku należy uzupełnić wszystkie dane, niezbędne do zalogowania się na allegro
+#można komentować, używać znaku znakiem #
+#prefix sandbox_ jest dla testu
+
+#login i password nie są konieczne, ale można je podać żeby wszystko trzymać w jednym miejscu
+sandbox_login=
+sandbox_password=
+#
+sandbox_client_secret=
+sandbox_client_id=
+sandbox_oauth_url=https://allegro.pl.allegrosandbox.pl/auth/oauth
+sandbox_redirect_uri=http://localhost:8000
+
+#prefix produkcja_ jest dla głownego allegro
+
+#opcjonalnie - login i password
+produkcja_login=
+produkcja_password=
+#
+produkcja_client_secret=
+produkcja_client_id=
+produkcja_redirect_uri=http://localhost:8000
+produkcja_oauth_url=https://allegro.pl/auth/oauth
