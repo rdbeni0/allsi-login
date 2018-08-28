@@ -1,5 +1,8 @@
 # allsi-login
 
+* dokumentacja: <http://collector1871.github.io/other/allsi-login/> 
+* autor: collector1871
+
 allego simple login (PL)
 
 **Dokumentacja** oraz **zbiór skryptów** perl5/python3/PHP, które mają w założeniu pomagać w zalogowaniu się do allegro. Aktualnie skupiam się na RESP API, które lada moment ma zastąpić całkowicie WEBApi. Skrypty są przeważnie polskojęzyczne, chociaż w ramach wolnego czasu możliwe jest przetłumaczenie.  
@@ -62,13 +65,13 @@ Główny output programu to **`./cache/allsi_access-token-12godz.json`** : jest 
 ## PRZYKŁADY DZIAŁANIA
 
 Przed jakimkolwiek działaniem, należy uzupełnić plik konfiguracyjny. Będzie on podawany w pierwszym parametrze. Wywołanie jest zawsze z dwoma parametrami (oddzielone 1 spacją):
-
+```text
     ./allsi-login.pl dir sandbox
     
     ./allsi-login.pl /home/lucyna/allsi-plik.konfiguracyjny.txt produkcja
 
     ./allsi-login.pl $HOME/Documents/.allsi-plik-konf.txt sandbox
-
+```
 ##  WebAPI (opcjonalnie)
 
 W repozytorium znajduje się również dodatkowy skrypt PHP : `WebAPI-produkcja-login.php`   
@@ -78,9 +81,11 @@ Aby skrypt zadziałał, musi być włączona obsługa SOAP w PHP. Można to spra
 
 Przed wywołaniem, w liniach 13-15 należy uzupełnić dane do logowania. Np.:
 
+```PHP
     define('ALLEGRO_LOGIN', '1970janusz987');
     define('ALLEGRO_PASSWORD', 'supertajne123');
     define('ALLEGRO_KEY', '43IKLUGHE3RKLJTSBADT89032453');
+```
 
 Wywołanie odbybywa się bez parametrów, czyli `./WebAPI-produkcja-login.php`
 
