@@ -81,7 +81,9 @@ Przed jakimkolwiek działaniem, należy uzupełnić plik konfiguracyjny. Będzie
 W repozytorium znajduje się również dodatkowy skrypt PHP : `WebAPI-produkcja-login.php`   
 Aby skrypt zadziałał, musi być włączona obsługa SOAP w PHP. Można to sprawdzić np. przez:
 
+```text
     php -i | grep -i soap
+```
 
 Przed wywołaniem, w liniach 13-15 należy uzupełnić dane do logowania. Np.:
 
