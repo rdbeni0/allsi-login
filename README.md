@@ -86,7 +86,7 @@ Wywołanie odbybywa się bez parametrów, czyli `./WebAPI-produkcja-login.php`
 
 Wynik to **`./cache/identyfikator_sesji`** : może on zostać użyty do dalszych requestów. WebAPI jednak będzie wygaszane, a więc repozytorium w tym zakresie nie będzie rozwijane.
 
-#### WSPÓŁPRACA
+## WSPÓŁPRACA
 
 Zachęcam wszystkich do współpracy:   
 * proszę zrobić to przez pull requesta: clonujemy repo, robimy nowy branch, a później PR   
