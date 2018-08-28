@@ -1,7 +1,7 @@
 # allsi-login
 
-* dokumentacja: <http://collector1871.github.io/other/allsi-login/> 
-* autor: collector1871
+* dokumentacja: <http://collector1871.github.io/other/allsi-login/>   
+* autor: collector1871  
 
 allego simple login (PL)
 
