@@ -27,7 +27,7 @@ Jeżeli repo będzie się rozrastać, a proces komplikować, to zależności ró
 
 Całość jest ściśle zgodna z oficjalną dokumentacją:  
 
-* https://developer.allegro.pl/auth/  
+* <https://developer.allegro.pl/auth/>  
 
 Kody dla aplikacji wygenerujemy i sprawdzimy tutaj:   
 
