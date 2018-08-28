@@ -9,9 +9,9 @@ allego simple login (PL)
 
 Repozytorium może być przydatne, ponieważ Allegro lubi się zmieniać. Coś co działało kiedyś, to dzisiaj już nie działa. Zmiany na Allegro pojawiają się często.  
    
-Jeżeli więc pojawi się jakaś zmiana dotycząca procesu logowania, to w tym repozytorium powinna zostać szybko zaimplementowana. Całe logowanie możliwe jest do przeprowadzenia "po stronie" desktopu (aplikacja biurkowa), ale również po stronie serwera (back end). Skrypty piszę z perspektywy desktopa na Linuxie (laptopa).
+Jeżeli więc pojawi się jakaś zmiana dotycząca procesu logowania, to w tym repozytorium powinna zostać szybko zaimplementowana. Całe logowanie możliwe jest do przeprowadzenia "po stronie" desktopu (aplikacja biurkowa), ale również po stronie serwera (back end). Skrypty piszę z perspektywy desktopa na Linuxie (laptopa).  
 
-W skrócie: proste i działające logowanie przy użyciu perl5/python3
+W skrócie: proste i działające logowanie przy użyciu perl5/python3  
 
 ## ZALEŻNOŚCI, WYMAGANIA
 
@@ -51,7 +51,7 @@ Główny skrypt perlowy do zarządzania loginem na allegro.
 Dwa wymagane parametry:  
    
 **PARAMETR 1** : położenie pliku konfiguracynnego:   
-- dir : wtedy plik konfiguracyjny będzie odczytywany z folderu lokalnego, jako `./.allsi_conf_file`
+- dir : wtedy plik konfiguracyjny będzie odczytywany z folderu lokalnego, jako `./.allsi_conf_file`  
 - pełna ścieżka unixowa, np. `/var/tmp/moj_plik_konfiguracyjny.txt`  
     
 **PARAMETR 2** : określenie środowiska:   
@@ -102,3 +102,4 @@ Przed jakimkolwiek publicznym pull requestem, proszę sprawdzić `.gitignore` - 
 Można więc dodać do `.gitignore` :  
 
     .allsi_conf_file
+    
