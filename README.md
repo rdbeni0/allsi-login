@@ -42,7 +42,8 @@ Plik ten znajduje się domyślnie w folderze z aplikacją jako: `./.alsi_conf_fi
 
 * **client_id**  jest zgodny z kolumną ze strony z rejestracją aplikacji: _Client ID / klucz WebAPI_
 * **client_secret** to _Client Secret_
-* **redirect_uri** to _Adresy Przekierowań_, tutaj należy wpisać `http://localhost:8000` (zarówno w pliku konfiguracyjnym jak i na stronie)
+* **redirect_uri** to _Adresy Przekierowań_   
+Tutaj należy wpisać `http://localhost:8000` (zarówno w pliku konfiguracyjnym jak i na stronie)
 
 W trakcie pierwszego uruchomienia `allsi-login.pl` pojawi się folder **`cache`** w którym będą znajdowały się pobrane dane dotyczące logowania.
 
