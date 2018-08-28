@@ -67,6 +67,7 @@ Główny output programu to **`./cache/allsi_access-token-12godz.json`** : jest 
 ## PRZYKŁADY DZIAŁANIA
 
 Przed jakimkolwiek działaniem, należy uzupełnić plik konfiguracyjny. Będzie on podawany w pierwszym parametrze. Wywołanie jest zawsze z dwoma parametrami (oddzielone 1 spacją):
+
 ```text
     ./allsi-login.pl dir sandbox
     
@@ -74,6 +75,7 @@ Przed jakimkolwiek działaniem, należy uzupełnić plik konfiguracyjny. Będzie
 
     ./allsi-login.pl $HOME/Documents/.allsi-plik-konf.txt sandbox
 ```
+
 ##  WebAPI (opcjonalnie)
 
 W repozytorium znajduje się również dodatkowy skrypt PHP : `WebAPI-produkcja-login.php`   
