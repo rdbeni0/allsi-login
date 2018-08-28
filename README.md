@@ -83,7 +83,7 @@ Aby skrypt zadziałał, musi być włączona obsługa SOAP w PHP. Można to spra
 
 Przed wywołaniem, w liniach 13-15 należy uzupełnić dane do logowania. Np.:
 
-```
+```text
     define('ALLEGRO_LOGIN', '1970janusz987');
     define('ALLEGRO_PASSWORD', 'supertajne123');
     define('ALLEGRO_KEY', '43IKLUGHE3RKLJTSBADT89032453');
