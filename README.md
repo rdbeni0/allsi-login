@@ -63,7 +63,7 @@ Dwa wymagane parametry:
 
 ## WYNIK PROGRAMU
 
-Główny output programu to **`./cache/allsi_access-token-12godz.json`** : jest to plik ze zdalnie uzyskanym kodem dostępu, który jest ważny przez 12 godzin i może zostać użyty do dalszych requestów. Drugim  plikiem jest **`./cache/allsi_access-token-12godz.txt`** - jest to czysty plik tekstowy z samym access tokenem (może wiec łatwo zostać wczytany w innym skrypcie).
+Główny output programu to **`./cache/allsi_access-token-12godz.json`** : jest to plik json ze zdalnie uzyskanymi kodami dostępu, jest ważny przez 12 godzin i może zostać użyty do dalszych requestów. Drugim  plikiem jest **`./cache/allsi_access-token-12godz.txt`** - jest to czysty plik tekstowy z samym access tokenem (może więc łatwo zostać wczytany w innym skrypcie).
 
 ## PRZYKŁADY DZIAŁANIA
 
