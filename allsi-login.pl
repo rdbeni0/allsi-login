@@ -23,6 +23,7 @@ DOKUMENTACJA
 
 use strict;
 use warnings;
+use JSON;
 
 my $numer_parametrow = @ARGV;
 sub usage{
@@ -102,7 +103,7 @@ else{
 #######################################
 
 my $pobierz_kod_autoryzujacy="./kod-autoryzujacy-10sekund.py $client_id $oauth_url $redirect_uri $client_secret";
-system($pobierz_kod_autoryzujacy);
+#system($pobierz_kod_autoryzujacy);
 
 #######################################
 ### zczytanie 10sekundowego kodu autoryzujacego z pliku
@@ -124,4 +125,28 @@ close($fh);
 #######################################
 
 my $pobierz_access_token="./access-token-12godz.py $client_id $oauth_url $redirect_uri $client_secret $kod_autoryzujacy_10sekund";
-system($pobierz_access_token);
+#system($pobierz_access_token);
+
+#######################################
+### przetworzenie jsona, do pliku tekstowego
+### zapisanie tego pliku w folderze cache
+#######################################
+
+my $allsi_access_token_12godz_txt='./cache/allsi_access-token-12godz.txt';
+my $file_with_json = './cache/allsi_access-token-12godz.json';
+
+my $json_text_z_pliku = do
+    {
+        open(my $json_fh, "<:encoding(UTF-8)", $file_with_json) or die("Can't open \$file_whith_json\": $!\n");
+        local $/;
+        <$json_fh>
+    };
+
+my $json_przetworz = JSON->new;
+my $dane_json = $json_przetworz->decode($json_text_z_pliku);
+my %dane_json = %{$dane_json};
+print($dane_json{"access_token"});
+
+open my $fh, ">", $allsi_access_token_12godz_txt or die("Could not open file. $!");
+print $fh $dane_json{"access_token"};
+close $fh;
