@@ -9,7 +9,7 @@ allego simple login (PL)
 
 Repozytorium może być przydatne, ponieważ Allegro lubi się zmieniać. Coś co działało kiedyś, to dzisiaj już nie działa. Zmiany na Allegro pojawiają się często.  
    
-Jeżeli więc pojawi się jakaś zmiana dotycząca procesu logowania, to w tym repozytorium powinna zostać szybko zaimplementowana. Całe logowanie możliwe jest do przeprowadzenia "po stronie" desktopu (aplikacja biurkowa), ale również po stronie serwera (back end). Skrypty piszę z perspektywy desktopa na Linuxie (laptopa).  
+Jeżeli więc pojawi się jakaś zmiana dotycząca procesu logowania, to w tym repozytorium powinna zostać szybko zaimplementowana. Całe logowanie możliwe jest do przeprowadzenia "po stronie" desktopu (aplikacja biurkowa), ale również po stronie serwera (back end). Skrypty piszę z perspektywy desktopa na Linuxie (laptopa), ale używam też dockera (nie jest konieczny dla tego repo).  
 
 W skrócie: proste i działające logowanie przy użyciu perl5/python3  
 
