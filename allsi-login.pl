@@ -103,7 +103,7 @@ else{
 #######################################
 
 my $pobierz_kod_autoryzujacy="./kod-autoryzujacy-10sekund.py $client_id $oauth_url $redirect_uri $client_secret";
-#system($pobierz_kod_autoryzujacy);
+system($pobierz_kod_autoryzujacy);
 
 #######################################
 ### zczytanie 10sekundowego kodu autoryzujacego z pliku
@@ -125,7 +125,7 @@ close($fh);
 #######################################
 
 my $pobierz_access_token="./access-token-12godz.py $client_id $oauth_url $redirect_uri $client_secret $kod_autoryzujacy_10sekund";
-#system($pobierz_access_token);
+system($pobierz_access_token);
 
 #######################################
 ### przetworzenie jsona, do pliku tekstowego
@@ -143,10 +143,8 @@ my $json_text_z_pliku = do
     };
 
 my $json_przetworz = JSON->new;
-my $dane_json = $json_przetworz->decode($json_text_z_pliku);
-my %dane_json = %{$dane_json};
-print($dane_json{"access_token"});
+my %dane_json = %{$json_przetworz->decode($json_text_z_pliku)};
 
-open my $fh, ">", $allsi_access_token_12godz_txt or die("Could not open file. $!");
-print $fh $dane_json{"access_token"};
-close $fh;
+open my $txt, ">", $allsi_access_token_12godz_txt or die("Could not open file. $!");
+print $txt $dane_json{"access_token"};
+close $txt;
