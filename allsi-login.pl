@@ -26,7 +26,9 @@ use warnings;
 use JSON;
 
 my $numer_parametrow = @ARGV;
-sub usage{
+
+sub usage
+{
     print($uzycie_skryptu);
     exit();
 }
@@ -35,7 +37,7 @@ sub usage{
 ### stworz folder cache, jesli nie istnieje
 #######################################
 
-my $utworz_folder_cache='mkdir -p ./cache';
+my $utworz_folder_cache = 'mkdir -p ./cache';
 system($utworz_folder_cache);
 
 #######################################
@@ -43,14 +45,17 @@ system($utworz_folder_cache);
 #######################################
 
 my $plik_konfiguracyjny;
-if($numer_parametrow ne '2') {
+if ( $numer_parametrow ne '2' )
+{
     usage();
 }
-elsif ($ARGV[0] eq 'dir') {
-    $plik_konfiguracyjny='./.allsi_conf_file';
+elsif ( $ARGV[0] eq 'dir' )
+{
+    $plik_konfiguracyjny = './.allsi_conf_file';
 }
-else {
-    $plik_konfiguracyjny=$ARGV[0];
+else
+{
+    $plik_konfiguracyjny = $ARGV[0];
 }
 
 #######################################
@@ -63,38 +68,54 @@ my $oauth_url;
 my $redirect_uri;
 my $client_secret;
 
-sub czytaj_config_file {
+sub czytaj_config_file
+{
     my ($zmienna_config) = @_;
-    if (-e $plik_konfiguracyjny) {
-        chomp(my $zmienna_output=`cat $plik_konfiguracyjny | grep "^$zmienna_config" | awk -F\'=\' \'\{print \$2\}\'`);
-        if ($zmienna_output){
-            return($zmienna_output);
+    if ( -e $plik_konfiguracyjny )
+    {
+        chomp( my $zmienna_output
+                = `cat $plik_konfiguracyjny | grep "^$zmienna_config" | awk -F\'=\' \'\{print \$2\}\'`
+        );
+        if ($zmienna_output)
+        {
+            return ($zmienna_output);
         }
-        else {
-           print("Poszukiwana zmienna (parametr): \"".$zmienna_config."\" jest pusta lub niepoprawna!\nPrzejrzyj plik konfiguracyjny: $plik_konfiguracyjny ! \n");
-           exit;
-        } 
+        else
+        {
+            print(    "Poszukiwana zmienna (parametr): \""
+                    . $zmienna_config
+                    . "\" jest pusta lub niepoprawna!\nPrzejrzyj plik konfiguracyjny: $plik_konfiguracyjny ! \n"
+            );
+            exit;
+        }
     }
-    else{
-        print("UWAGA - plik konfiguracyjny \"".$plik_konfiguracyjny."\" jest niepoprawny lub pusty! Przejrzyj komponenty tego pliku, plik sam w sobie!"."\n");
+    else
+    {
+        print(    "UWAGA - plik konfiguracyjny \""
+                . $plik_konfiguracyjny
+                . "\" jest niepoprawny lub pusty! Przejrzyj komponenty tego pliku, plik sam w sobie!"
+                . "\n" );
         print("Mozesz rowniez podac parametr: dir\n");
         exit();
     }
 }
 
-if ($ARGV[1] eq 'sandbox') {
-    $client_id=(czytaj_config_file("sandbox_client_id"));
-    $oauth_url=(czytaj_config_file("sandbox_oauth_url"));
-    $redirect_uri=(czytaj_config_file("sandbox_redirect_uri"));
-    $client_secret=(czytaj_config_file("sandbox_client_secret"));
+if ( $ARGV[1] eq 'sandbox' )
+{
+    $client_id     = ( czytaj_config_file("sandbox_client_id") );
+    $oauth_url     = ( czytaj_config_file("sandbox_oauth_url") );
+    $redirect_uri  = ( czytaj_config_file("sandbox_redirect_uri") );
+    $client_secret = ( czytaj_config_file("sandbox_client_secret") );
 }
-elsif ($ARGV[1] eq 'produkcja') {
-    $client_id=(czytaj_config_file("produkcja_client_id"));
-    $oauth_url=(czytaj_config_file("produkcja_oauth_url"));
-    $redirect_uri=(czytaj_config_file("produkcja_redirect_uri"));
-    $client_secret=(czytaj_config_file("produkcja_client_secret"));
+elsif ( $ARGV[1] eq 'produkcja' )
+{
+    $client_id     = ( czytaj_config_file("produkcja_client_id") );
+    $oauth_url     = ( czytaj_config_file("produkcja_oauth_url") );
+    $redirect_uri  = ( czytaj_config_file("produkcja_redirect_uri") );
+    $client_secret = ( czytaj_config_file("produkcja_client_secret") );
 }
-else{
+else
+{
     usage();
 }
 
@@ -102,17 +123,19 @@ else{
 ### wywołanie pythona logującego się do REST api i pobierajacego 10 sekundowy kod autoryzujacy
 #######################################
 
-my $pobierz_kod_autoryzujacy="./kod-autoryzujacy-10sekund.py $client_id $oauth_url $redirect_uri $client_secret";
+my $pobierz_kod_autoryzujacy
+    = "./kod-autoryzujacy-10sekund.py $client_id $oauth_url $redirect_uri $client_secret";
 system($pobierz_kod_autoryzujacy);
 
 #######################################
 ### zczytanie 10sekundowego kodu autoryzujacego z pliku
 #######################################
 
-my $pobrany_kod_autoryzujacy='./cache/allsi_kod-autoryzujacy-10sekund';
+my $pobrany_kod_autoryzujacy = './cache/allsi_kod-autoryzujacy-10sekund';
 my $kod_autoryzujacy_10sekund;
-open(my $fh, '<', $pobrany_kod_autoryzujacy) or
-die "Nie mozna otworzyc pliku z 10 sekundowym kodem autoryzujacym !! Sprawdz 1os kod i ten plik: $pobrany_kod_autoryzujacy!";
+open( my $fh, '<', $pobrany_kod_autoryzujacy )
+    or die
+    "Nie mozna otworzyc pliku z 10 sekundowym kodem autoryzujacym !! Sprawdz 1os kod i ten plik: $pobrany_kod_autoryzujacy!";
 {
     local $/;
     $kod_autoryzujacy_10sekund = <$fh>;
@@ -124,7 +147,8 @@ close($fh);
 ### zapisanie nowego kodu do pliku json
 #######################################
 
-my $pobierz_access_token="./access-token-12godz.py $client_id $oauth_url $redirect_uri $client_secret $kod_autoryzujacy_10sekund";
+my $pobierz_access_token
+    = "./access-token-12godz.py $client_id $oauth_url $redirect_uri $client_secret $kod_autoryzujacy_10sekund";
 system($pobierz_access_token);
 
 #######################################
@@ -132,18 +156,19 @@ system($pobierz_access_token);
 ### zapisanie tego pliku w folderze cache
 #######################################
 
-my $allsi_access_token_12godz_txt='./cache/allsi_access-token-12godz.txt';
-my $file_with_json = './cache/allsi_access-token-12godz.json';
+my $allsi_access_token_12godz_txt = './cache/allsi_access-token-12godz.txt';
+my $file_with_json                = './cache/allsi_access-token-12godz.json';
 
 my $json_text_z_pliku = do
-    {
-        open(my $json_fh, "<:encoding(UTF-8)", $file_with_json) or die("Can't open \$file_whith_json\": $!\n");
-        local $/;
-        <$json_fh>
-    };
+{
+    open( my $json_fh, "<:encoding(UTF-8)", $file_with_json )
+        or die("Can't open \$file_whith_json\": $!\n");
+    local $/;
+    <$json_fh>;
+};
 
 my $json_przetworz = JSON->new;
-my %dane_json = %{$json_przetworz->decode($json_text_z_pliku)};
+my %dane_json      = %{ $json_przetworz->decode($json_text_z_pliku) };
 
 open my $txt, ">", $allsi_access_token_12godz_txt or die("Could not open file. $!");
 print $txt $dane_json{"access_token"};
