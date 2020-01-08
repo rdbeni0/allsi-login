@@ -2,8 +2,8 @@
 
 my $uzycie_skryptu = <<DOKUMENTACJA;
 #######################################
-autor:         collector1871  
-strona domowa: http://collector1871.github.io/  
+autor:         rdbeni0  
+strona domowa: http://rdbeni0.github.io/  
 #######################################
 Główny skrypt perlowy do zarządzania loginem na allegro.  
   

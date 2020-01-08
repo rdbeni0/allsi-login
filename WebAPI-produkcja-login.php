@@ -3,8 +3,8 @@
 
 /*
 #######################################
-autor:         collector1871  
-strona domowa: http://collector1871.github.io/  
+autor:         rdbeni0  
+strona domowa: http://rdbeni0.github.io/  
 #######################################
 Skrypt PHP do logowania na Allegro (tylko produkcja) przez WebAPI.
 Przed wywołaniem, należy uzupełnić dane do logowania pomiędzy ''
