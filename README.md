@@ -1,8 +1,5 @@
 # allsi-login
 
-* dokumentacja: <http://rdbeni0.github.io/other/allsi-login/>   
-* autor: rdbeni0  
-
 allego simple login (PL)
 
 **Dokumentacja** oraz **zbiór skryptów** perl5/python3/PHP, które mają w założeniu pomagać w zalogowaniu się do allegro. Aktualnie skupiam się na RESP API, które lada moment ma zastąpić całkowicie WEBApi. Skrypty są przeważnie polskojęzyczne, chociaż w ramach wolnego czasu możliwe jest przetłumaczenie.  

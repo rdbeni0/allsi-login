@@ -1,5 +1,9 @@
 #!/usr/bin/perl -w
 
+use strict;
+use warnings;
+use JSON;
+
 my $uzycie_skryptu = <<DOKUMENTACJA;
 #######################################
 autor:         rdbeni0  
@@ -20,11 +24,6 @@ Wymagane są dwa parametry:
 DOKUMENTACJA
 
 #######################################
-
-use strict;
-use warnings;
-use JSON;
-
 my $numer_parametrow = @ARGV;
 
 sub usage
